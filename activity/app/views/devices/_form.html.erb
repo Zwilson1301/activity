@@ -1,0 +1,8 @@
+
+<%= simple_form_for device do |f| %>
+  <%= f.input :Name %>
+  <%= f.association :manufacturer, label_method: :name %>
+  <%= f.association :catigory, label_method: :name%>
+  <%= f.association :employee, label_method: :fullname%>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,20 @@
+<div id="<%= dom_id software %>">
+  <p>
+    <strong>Name:</strong>
+    <%= software.name %>
+  </p>
+
+  <p>
+    <strong>License count:</strong>
+    <%= software.License_count %>
+  </p>
+
+  <p>
+    <strong> Assigned Employees:</strong>
+    <ul>
+      <% software.employees.each do |e| %>
+        <li><%= link_to e.fullname, employee_path(e) %></li>
+      <% end %>
+    </ul>
+  </p>
+</div>

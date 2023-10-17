@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Catigories</h1>
+
+<div id="catigories">
+  <% @catigories.each do |catigory| %>
+   <div class="card"> 
+    <%= render catigory %>
+    <p>
+      <%= link_to "Show this catigory", catigory %>
+    </p>
+    </div>
+   <% end %>  
+</div>
+
+<%= link_to "New catigory", new_catigory_path %>

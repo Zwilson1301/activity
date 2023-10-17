@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Manufacturers</h1>
+
+<div id="manufacturers">
+  <% @manufacturers.each do |manufacturer| %>
+   <div class="card">
+    <%= render manufacturer %>
+    <p>
+      <%= link_to "Show this manufacturer", manufacturer %>
+    </p>
+   </div>
+  <% end %>
+</div>
+
+<%= link_to "New manufacturer", new_manufacturer_path %>

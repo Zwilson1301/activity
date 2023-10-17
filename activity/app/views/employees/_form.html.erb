@@ -1,0 +1,8 @@
+
+<%= simple_form_for employee do |form| %>
+  <%= form.input :Firstname %>
+  <%= form.input :Lastname %>
+  <%= form.input :profile_picture%>
+  <%= form.association :softwares, label_method: :name, as: :check_boxes %>
+  <%= form.submit :class => "btn btn-primary"%>
+<% end %>

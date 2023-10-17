@@ -1,0 +1,23 @@
+<div id="<%= dom_id device %>">
+  <p>
+    <strong>Name:</strong>
+    <%= device.Name %>
+  </p>
+
+  <p>
+    <strong>Manufacturer:</strong>
+    <%= device.manufacturer.name %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= device.catigory.name %>
+  </p>
+
+  <p>
+    <strong>Assigned to:</strong>
+    <% if device.employee.present? %>
+     <%= link_to device.employee.fullname, employee_path(device.employee)%>
+    <%end%>
+  </p>
+</div>
