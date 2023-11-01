@@ -15550,3 +15550,964 @@ Completed 200 OK in 171ms (Views: 164.6ms | ActiveRecord: 4.9ms | Allocations: 1
   [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[36mActiveRecord::InternalMetadata Load (2.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.56.1 at 2023-10-25 23:28:46 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mCatigory Load (0.9ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories"[0m
+  ↳ app/views/dashboard/index.html.erb:14
+  [1m[36mDevice Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mSoftware Load (1.3ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/dashboard/index.html.erb:36
+  [1m[36mEmployee Count (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/views/dashboard/index.html.erb:40
+  [1m[36mCACHE Employee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/models/software.rb:4:in `compliant?'
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 109.0ms | Allocations: 27054)
+  Rendered layout layouts/application.html.erb (Duration: 337.5ms | Allocations: 59687)
+Completed 200 OK in 387ms (Views: 335.3ms | ActiveRecord: 8.8ms | Allocations: 67819)
+
+
+Started GET "/catigories" for 192.168.56.1 at 2023-10-25 23:28:58 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CatigoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering catigories/index.html.erb within layouts/application
+  [1m[36mCatigory Load (0.6ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories"[0m
+  ↳ app/views/catigories/index.html.erb:6
+  Rendered catigories/_catigory.html.erb (Duration: 1.5ms | Allocations: 178)
+  Rendered catigories/_catigory.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered catigories/_catigory.html.erb (Duration: 0.0ms | Allocations: 16)
+  Rendered catigories/index.html.erb within layouts/application (Duration: 21.8ms | Allocations: 2005)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 4199)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.6ms | Allocations: 4951)
+
+
+Started GET "/catigories/new" for 192.168.56.1 at 2023-10-25 23:29:04 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CatigoriesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering catigories/new.html.erb within layouts/application
+  Rendered catigories/_form.html.erb (Duration: 59.4ms | Allocations: 8519)
+  Rendered catigories/new.html.erb within layouts/application (Duration: 63.7ms | Allocations: 8823)
+  Rendered layout layouts/application.html.erb (Duration: 78.5ms | Allocations: 10930)
+Completed 200 OK in 83ms (Views: 81.6ms | ActiveRecord: 0.0ms | Allocations: 11299)
+
+
+Started GET "/" for 192.168.56.1 at 2023-10-26 00:07:01 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mCatigory Load (0.3ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories"[0m
+  ↳ app/views/dashboard/index.html.erb:14
+  [1m[36mDevice Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mSoftware Load (0.5ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/dashboard/index.html.erb:36
+  [1m[36mEmployee Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/views/dashboard/index.html.erb:40
+  [1m[36mCACHE Employee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/models/software.rb:4:in `compliant?'
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 266.8ms | Allocations: 27052)
+  Rendered layout layouts/application.html.erb (Duration: 517.3ms | Allocations: 59864)
+Completed 200 OK in 579ms (Views: 523.6ms | ActiveRecord: 10.6ms | Allocations: 67995)
+
+
+Started GET "/devices" for 192.168.56.1 at 2023-10-26 00:07:07 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DevicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devices/index.html.erb within layouts/application
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices"[0m
+  ↳ app/views/devices/index.html.erb:6
+  [1m[36mManufacturer Load (2.1ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers" WHERE "manufacturers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:9
+  [1m[36mCatigory Load (0.3ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories" WHERE "catigories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:14
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:19
+  Rendered devices/_device.html.erb (Duration: 88.5ms | Allocations: 12811)
+  Rendered devices/index.html.erb within layouts/application (Duration: 141.6ms | Allocations: 17529)
+  Rendered layout layouts/application.html.erb (Duration: 195.2ms | Allocations: 19729)
+Completed 200 OK in 209ms (Views: 202.3ms | ActiveRecord: 4.7ms | Allocations: 20478)
+
+
+Started GET "/devices" for 192.168.56.1 at 2023-10-26 00:13:00 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DevicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devices/index.html.erb within layouts/application
+  [1m[36mDevice Load (0.7ms)[0m  [1m[34mSELECT "devices".* FROM "devices"[0m
+  ↳ app/views/devices/index.html.erb:6
+  [1m[36mManufacturer Load (0.2ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers" WHERE "manufacturers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:9
+  [1m[36mCatigory Load (0.4ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories" WHERE "catigories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:14
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:19
+  Rendered devices/_device.html.erb (Duration: 41.9ms | Allocations: 2095)
+  Rendered devices/index.html.erb within layouts/application (Duration: 62.7ms | Allocations: 2979)
+  Rendered layout layouts/application.html.erb (Duration: 79.3ms | Allocations: 5085)
+Completed 200 OK in 95ms (Views: 90.8ms | ActiveRecord: 1.4ms | Allocations: 5360)
+
+
+Started GET "/" for 192.168.56.1 at 2023-10-26 00:13:02 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mCatigory Load (0.3ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories"[0m
+  ↳ app/views/dashboard/index.html.erb:14
+  [1m[36mDevice Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mSoftware Load (0.3ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/dashboard/index.html.erb:36
+  [1m[36mEmployee Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/views/dashboard/index.html.erb:40
+  [1m[36mCACHE Employee Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/models/software.rb:4:in `compliant?'
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 134.8ms | Allocations: 8599)
+  Rendered layout layouts/application.html.erb (Duration: 154.3ms | Allocations: 10856)
+Completed 200 OK in 164ms (Views: 158.5ms | ActiveRecord: 4.6ms | Allocations: 11149)
+
+
+Started GET "/catigories" for 192.168.56.1 at 2023-10-26 00:13:09 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by CatigoriesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering catigories/index.html.erb within layouts/application
+  [1m[36mCatigory Load (0.2ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories"[0m
+  ↳ app/views/catigories/index.html.erb:6
+  Rendered catigories/_catigory.html.erb (Duration: 3.6ms | Allocations: 163)
+  Rendered catigories/_catigory.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered catigories/_catigory.html.erb (Duration: 0.1ms | Allocations: 16)
+  Rendered catigories/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 1712)
+  Rendered layout layouts/application.html.erb (Duration: 40.6ms | Allocations: 3906)
+Completed 200 OK in 53ms (Views: 52.0ms | ActiveRecord: 0.2ms | Allocations: 4652)
+
+
+Started GET "/" for 192.168.56.1 at 2023-10-26 00:35:51 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DashboardController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering dashboard/index.html.erb within layouts/application
+  [1m[36mCatigory Load (0.2ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories"[0m
+  ↳ app/views/dashboard/index.html.erb:14
+  [1m[36mDevice Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "1"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "2"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mDevice Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ?[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:17
+  [1m[36mDevice Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NOT NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:18
+  [1m[36mDevice Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "devices" WHERE "devices"."catigory_id" = ? AND "devices"."employee_id" IS NULL[0m  [["catigory_id", "3"]]
+  ↳ app/views/dashboard/index.html.erb:19
+  [1m[36mSoftware Load (0.6ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/dashboard/index.html.erb:36
+  [1m[36mEmployee Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/views/dashboard/index.html.erb:40
+  [1m[36mCACHE Employee Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "employees" INNER JOIN "employees_softwares" ON "employees"."id" = "employees_softwares"."employee_id" WHERE "employees_softwares"."software_id" = ?[0m  [["software_id", 1]]
+  ↳ app/models/software.rb:4:in `compliant?'
+  Rendered dashboard/index.html.erb within layouts/application (Duration: 177.6ms | Allocations: 8767)
+  Rendered layout layouts/application.html.erb (Duration: 195.4ms | Allocations: 11065)
+Completed 200 OK in 206ms (Views: 197.8ms | ActiveRecord: 6.2ms | Allocations: 11350)
+
+
+Started GET "/employees" for 192.168.56.1 at 2023-10-26 00:35:58 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:6
+  [1m[36mActiveStorage::Attachment Load (4.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Employee"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/employees/_employee.html.erb:2
+  [1m[36mActiveStorage::Blob Load (2.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/employees/_employee.html.erb:3
+  [1m[36mDevice Load (0.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."employee_id" = ?[0m  [["employee_id", "5"]]
+  ↳ app/views/employees/_employee.html.erb:15
+  [1m[36mSoftware Load (0.5ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares" INNER JOIN "employees_softwares" ON "softwares"."id" = "employees_softwares"."software_id" WHERE "employees_softwares"."employee_id" = ?[0m  [["employee_id", 5]]
+  ↳ app/views/employees/_employee.html.erb:25
+  Rendered employees/_employee.html.erb (Duration: 196.8ms | Allocations: 23756)
+  Rendered employees/index.html.erb within layouts/application (Duration: 229.7ms | Allocations: 25074)
+  Rendered layout layouts/application.html.erb (Duration: 239.7ms | Allocations: 27267)
+Completed 200 OK in 252ms (Views: 240.6ms | ActiveRecord: 10.0ms | Allocations: 28008)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--1fbdb0dfc6fd8593c539394e2246ca5555dff2e7/yawning%20portal%20map.png" for 192.168.56.1 at 2023-10-26 00:35:58 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb", "variation_key"=>"[FILTERED]", "filename"=>"yawning portal map"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (2.0ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 3], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+[36m  Disk Storage (32.9ms) [0m[34mDownloaded file from key: tkm8fmntml65qpedy5h32o5ye7h0[0m
+Completed 500 Internal Server Error in 286ms (ActiveRecord: 2.8ms | Allocations: 16229)
+
+
+  
+LoadError (Could not open library 'vips.so.42': vips.so.42: cannot open shared object file: No such file or directory.
+Could not open library 'libvips.so.42': libvips.so.42: cannot open shared object file: No such file or directory.
+Searched in <system library path>, /usr/lib, /usr/local/lib, /opt/local/lib):
+  
+ffi (1.16.2) lib/ffi/dynamic_library.rb:65:in `load_library'
+ffi (1.16.2) lib/ffi/library.rb:95:in `block in ffi_lib'
+ffi (1.16.2) lib/ffi/library.rb:94:in `map'
+ffi (1.16.2) lib/ffi/library.rb:94:in `ffi_lib'
+ruby-vips (2.1.4) lib/vips.rb:573:in `<module:Vips>'
+ruby-vips (2.1.4) lib/vips.rb:570:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+image_processing (1.12.2) lib/image_processing/vips.rb:1:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `const_get'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `processor'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:20:in `process'
+activestorage (7.0.8) lib/active_storage/transformers/transformer.rb:22:in `transform'
+activestorage (7.0.8) app/models/active_storage/variation.rb:56:in `block in transform'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+activestorage (7.0.8) app/models/active_storage/variation.rb:55:in `transform'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:35:in `block in transform_blob'
+activestorage (7.0.8) lib/active_storage/downloader.rb:15:in `block in open'
+activestorage (7.0.8) lib/active_storage/downloader.rb:24:in `open_tempfile'
+activestorage (7.0.8) lib/active_storage/downloader.rb:12:in `open'
+activestorage (7.0.8) lib/active_storage/service.rb:90:in `open'
+activestorage (7.0.8) app/models/active_storage/blob.rb:301:in `open'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:34:in `transform_blob'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:19:in `process'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:14:in `processed'
+activestorage (7.0.8) app/controllers/active_storage/representations/base_controller.rb:14:in `set_representation'
+activesupport (7.0.8) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/employees/new" for 192.168.56.1 at 2023-10-26 00:37:02 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mSoftware Load (0.2ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/employees/_form.html.erb:6
+  Rendered employees/_form.html.erb (Duration: 103.6ms | Allocations: 22255)
+  Rendered employees/new.html.erb within layouts/application (Duration: 111.4ms | Allocations: 22551)
+  Rendered layout layouts/application.html.erb (Duration: 123.6ms | Allocations: 24699)
+Completed 200 OK in 134ms (Views: 132.6ms | ActiveRecord: 0.2ms | Allocations: 25063)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--1fbdb0dfc6fd8593c539394e2246ca5555dff2e7/yawning%20portal%20map.png" for 192.168.56.1 at 2023-10-26 00:37:02 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb", "variation_key"=>"[FILTERED]", "filename"=>"yawning portal map"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.2ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 3], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+[36m  Disk Storage (65.1ms) [0m[34mDownloaded file from key: tkm8fmntml65qpedy5h32o5ye7h0[0m
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 0.4ms | Allocations: 5268)
+
+
+  
+LoadError (Could not open library 'vips.so.42': vips.so.42: cannot open shared object file: No such file or directory.
+Could not open library 'libvips.so.42': libvips.so.42: cannot open shared object file: No such file or directory.
+Searched in <system library path>, /usr/lib, /usr/local/lib, /opt/local/lib):
+  
+ffi (1.16.2) lib/ffi/dynamic_library.rb:65:in `load_library'
+ffi (1.16.2) lib/ffi/library.rb:95:in `block in ffi_lib'
+ffi (1.16.2) lib/ffi/library.rb:94:in `map'
+ffi (1.16.2) lib/ffi/library.rb:94:in `ffi_lib'
+ruby-vips (2.1.4) lib/vips.rb:573:in `<module:Vips>'
+ruby-vips (2.1.4) lib/vips.rb:570:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+image_processing (1.12.2) lib/image_processing/vips.rb:1:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `const_get'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `processor'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:20:in `process'
+activestorage (7.0.8) lib/active_storage/transformers/transformer.rb:22:in `transform'
+activestorage (7.0.8) app/models/active_storage/variation.rb:56:in `block in transform'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+activestorage (7.0.8) app/models/active_storage/variation.rb:55:in `transform'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:35:in `block in transform_blob'
+activestorage (7.0.8) lib/active_storage/downloader.rb:15:in `block in open'
+activestorage (7.0.8) lib/active_storage/downloader.rb:24:in `open_tempfile'
+activestorage (7.0.8) lib/active_storage/downloader.rb:12:in `open'
+activestorage (7.0.8) lib/active_storage/service.rb:90:in `open'
+activestorage (7.0.8) app/models/active_storage/blob.rb:301:in `open'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:34:in `transform_blob'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:19:in `process'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:14:in `processed'
+activestorage (7.0.8) app/controllers/active_storage/representations/base_controller.rb:14:in `set_representation'
+activesupport (7.0.8) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/devices" for 192.168.56.1 at 2023-10-26 00:40:18 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by DevicesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devices/index.html.erb within layouts/application
+  [1m[36mDevice Load (0.4ms)[0m  [1m[34mSELECT "devices".* FROM "devices"[0m
+  ↳ app/views/devices/index.html.erb:6
+  [1m[36mManufacturer Load (0.5ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers" WHERE "manufacturers"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:9
+  [1m[36mCatigory Load (0.4ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories" WHERE "catigories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:14
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/devices/_device.html.erb:19
+  Rendered devices/_device.html.erb (Duration: 32.2ms | Allocations: 2167)
+  Rendered devices/index.html.erb within layouts/application (Duration: 49.4ms | Allocations: 3068)
+  Rendered layout layouts/application.html.erb (Duration: 60.5ms | Allocations: 5207)
+Completed 200 OK in 68ms (Views: 65.4ms | ActiveRecord: 1.8ms | Allocations: 5481)
+
+
+Started GET "/employees" for 192.168.56.1 at 2023-10-26 00:52:34 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+  ↳ app/views/employees/index.html.erb:6
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 5], ["record_type", "Employee"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/employees/_employee.html.erb:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/employees/_employee.html.erb:3
+  [1m[36mDevice Load (2.9ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."employee_id" = ?[0m  [["employee_id", "5"]]
+  ↳ app/views/employees/_employee.html.erb:15
+  [1m[36mSoftware Load (0.4ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares" INNER JOIN "employees_softwares" ON "softwares"."id" = "employees_softwares"."software_id" WHERE "employees_softwares"."employee_id" = ?[0m  [["employee_id", 5]]
+  ↳ app/views/employees/_employee.html.erb:25
+  Rendered employees/_employee.html.erb (Duration: 72.1ms | Allocations: 3640)
+  Rendered employees/index.html.erb within layouts/application (Duration: 104.8ms | Allocations: 4660)
+  Rendered layout layouts/application.html.erb (Duration: 115.8ms | Allocations: 6765)
+Completed 200 OK in 131ms (Views: 121.5ms | ActiveRecord: 6.8ms | Allocations: 7035)
+
+
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--1fbdb0dfc6fd8593c539394e2246ca5555dff2e7/yawning%20portal%20map.png" for 192.168.56.1 at 2023-10-26 00:52:34 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb", "variation_key"=>"[FILTERED]", "filename"=>"yawning portal map"}
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 3], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+[36m  Disk Storage (92.3ms) [0m[34mDownloaded file from key: tkm8fmntml65qpedy5h32o5ye7h0[0m
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 0.6ms | Allocations: 13280)
+
+
+  
+LoadError (Could not open library 'vips.so.42': vips.so.42: cannot open shared object file: No such file or directory.
+Could not open library 'libvips.so.42': libvips.so.42: cannot open shared object file: No such file or directory.
+Searched in <system library path>, /usr/lib, /usr/local/lib, /opt/local/lib):
+  
+ffi (1.16.2) lib/ffi/dynamic_library.rb:65:in `load_library'
+ffi (1.16.2) lib/ffi/library.rb:95:in `block in ffi_lib'
+ffi (1.16.2) lib/ffi/library.rb:94:in `map'
+ffi (1.16.2) lib/ffi/library.rb:94:in `ffi_lib'
+ruby-vips (2.1.4) lib/vips.rb:573:in `<module:Vips>'
+ruby-vips (2.1.4) lib/vips.rb:570:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+image_processing (1.12.2) lib/image_processing/vips.rb:1:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `const_get'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `processor'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:20:in `process'
+activestorage (7.0.8) lib/active_storage/transformers/transformer.rb:22:in `transform'
+activestorage (7.0.8) app/models/active_storage/variation.rb:56:in `block in transform'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+activestorage (7.0.8) app/models/active_storage/variation.rb:55:in `transform'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:35:in `block in transform_blob'
+activestorage (7.0.8) lib/active_storage/downloader.rb:15:in `block in open'
+activestorage (7.0.8) lib/active_storage/downloader.rb:24:in `open_tempfile'
+activestorage (7.0.8) lib/active_storage/downloader.rb:12:in `open'
+activestorage (7.0.8) lib/active_storage/service.rb:90:in `open'
+activestorage (7.0.8) app/models/active_storage/blob.rb:301:in `open'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:34:in `transform_blob'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:19:in `process'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:14:in `processed'
+activestorage (7.0.8) app/controllers/active_storage/representations/base_controller.rb:14:in `set_representation'
+activesupport (7.0.8) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/employees/new" for 192.168.56.1 at 2023-10-26 00:52:36 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+Started GET "/rails/active_storage/representations/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RkhKbGMybDZaVjkwYjE5c2FXMXBkRnNIYVdscGFRPT0iLCJleHAiOm51bGwsInB1ciI6InZhcmlhdGlvbiJ9fQ==--1fbdb0dfc6fd8593c539394e2246ca5555dff2e7/yawning%20portal%20map.png" for 192.168.56.1 at 2023-10-26 00:52:36 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mSoftware Load (0.3ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+Processing by ActiveStorage::Representations::RedirectController#show as PNG
+  ↳ app/views/employees/_form.html.erb:6
+  Parameters: {"signed_blob_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1afc98927705609dadfe046857f509c2a2afd7cb", "variation_key"=>"[FILTERED]", "filename"=>"yawning portal map"}
+  Rendered employees/_form.html.erb (Duration: 36.3ms | Allocations: 5282)
+  Rendered employees/new.html.erb within layouts/application (Duration: 47.9ms | Allocations: 5792)
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mActiveStorage::VariantRecord Load (0.4ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = ? AND "active_storage_variant_records"."variation_digest" = ? LIMIT ?[0m  [["blob_id", 3], ["variation_digest", "uyx6Kcit1Aa78Mrn7bVgZ7OZn0Y="], ["LIMIT", 1]]
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 9203)
+Completed 200 OK in 93ms (Views: 85.1ms | ActiveRecord: 0.3ms | Allocations: 11936)
+
+
+[36m  Disk Storage (88.6ms) [0m[34mDownloaded file from key: tkm8fmntml65qpedy5h32o5ye7h0[0m
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 1.2ms | Allocations: 8084)
+
+
+  
+LoadError (Could not open library 'vips.so.42': vips.so.42: cannot open shared object file: No such file or directory.
+Could not open library 'libvips.so.42': libvips.so.42: cannot open shared object file: No such file or directory.
+Searched in <system library path>, /usr/lib, /usr/local/lib, /opt/local/lib):
+  
+ffi (1.16.2) lib/ffi/dynamic_library.rb:65:in `load_library'
+ffi (1.16.2) lib/ffi/library.rb:95:in `block in ffi_lib'
+ffi (1.16.2) lib/ffi/library.rb:94:in `map'
+ffi (1.16.2) lib/ffi/library.rb:94:in `ffi_lib'
+ruby-vips (2.1.4) lib/vips.rb:573:in `<module:Vips>'
+ruby-vips (2.1.4) lib/vips.rb:570:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+image_processing (1.12.2) lib/image_processing/vips.rb:1:in `<main>'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+<internal:/home/wilsonzj/.rvm/rubies/ruby-3.2.2/lib/ruby/3.2.0/rubygems/core_ext/kernel_require.rb>:37:in `require'
+bootsnap (1.16.0) lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:32:in `require'
+zeitwerk (2.6.11) lib/zeitwerk/kernel.rb:38:in `require'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `const_get'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:29:in `processor'
+activestorage (7.0.8) lib/active_storage/transformers/image_processing_transformer.rb:20:in `process'
+activestorage (7.0.8) lib/active_storage/transformers/transformer.rb:22:in `transform'
+activestorage (7.0.8) app/models/active_storage/variation.rb:56:in `block in transform'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+activestorage (7.0.8) app/models/active_storage/variation.rb:55:in `transform'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:35:in `block in transform_blob'
+activestorage (7.0.8) lib/active_storage/downloader.rb:15:in `block in open'
+activestorage (7.0.8) lib/active_storage/downloader.rb:24:in `open_tempfile'
+activestorage (7.0.8) lib/active_storage/downloader.rb:12:in `open'
+activestorage (7.0.8) lib/active_storage/service.rb:90:in `open'
+activestorage (7.0.8) app/models/active_storage/blob.rb:301:in `open'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:34:in `transform_blob'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:19:in `process'
+activestorage (7.0.8) app/models/active_storage/variant_with_record.rb:14:in `processed'
+activestorage (7.0.8) app/controllers/active_storage/representations/base_controller.rb:14:in `set_representation'
+activesupport (7.0.8) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.8) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.8) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.8) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.8) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.8) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.8) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.8) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.8) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/rescue.rb:23:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.8) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.8) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.8) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.8) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.8) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.8) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.8) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.8) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.8) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.8) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.8) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.8) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.8) lib/rack/etag.rb:27:in `call'
+rack (2.2.8) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.8) lib/rack/head.rb:12:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.8) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.8) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.8) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.8) lib/active_record/migration.rb:638:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.8) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.8) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:19:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/show_exceptions.rb:29:in `call'
+railties (7.0.8) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.8) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.8) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.8) lib/rack/method_override.rb:24:in `call'
+rack (2.2.8) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.8) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.8) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.8) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.8) lib/action_dispatch/middleware/host_authorization.rb:138:in `call'
+railties (7.0.8) lib/rails/engine.rb:530:in `call'
+puma (5.6.7) lib/puma/configuration.rb:252:in `call'
+puma (5.6.7) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.7) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.7) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.7) lib/puma/server.rb:443:in `process_client'
+puma (5.6.7) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/employees" for 192.168.56.1 at 2023-10-26 00:53:41 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"Firstname"=>"", "Lastname"=>"", "software_ids"=>[""]}, "commit"=>"Create Employee"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:27:in `block in create'
+  [1m[36mEmployee Create (13.4ms)[0m  [1m[32mINSERT INTO "employees" ("Firstname", "Lastname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["Firstname", ""], ["Lastname", ""], ["created_at", "2023-10-26 00:53:41.710572"], ["updated_at", "2023-10-26 00:53:41.710572"]]
+  ↳ app/controllers/employees_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (27.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/employees_controller.rb:27:in `block in create'
+Redirected to http://192.168.56.101:3000/employees/6
+Completed 302 Found in 178ms (ActiveRecord: 41.4ms | Allocations: 4003)
+
+
+Started GET "/employees/6" for 192.168.56.1 at 2023-10-26 00:53:41 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mEmployee Load (0.4ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:63:in `set_employee'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 6], ["record_type", "Employee"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/employees/_employee.html.erb:2
+  [1m[36mDevice Load (0.7ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."employee_id" = ?[0m  [["employee_id", "6"]]
+  ↳ app/views/employees/_employee.html.erb:15
+  [1m[36mSoftware Load (0.4ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares" INNER JOIN "employees_softwares" ON "softwares"."id" = "employees_softwares"."software_id" WHERE "employees_softwares"."employee_id" = ?[0m  [["employee_id", 6]]
+  ↳ app/views/employees/_employee.html.erb:25
+  Rendered employees/_employee.html.erb (Duration: 37.2ms | Allocations: 2515)
+  Rendered employees/show.html.erb within layouts/application (Duration: 51.0ms | Allocations: 3322)
+  Rendered layout layouts/application.html.erb (Duration: 64.4ms | Allocations: 5453)
+Completed 200 OK in 91ms (Views: 71.2ms | ActiveRecord: 1.7ms | Allocations: 6921)
+
+
+Started GET "/employees/new" for 192.168.56.1 at 2023-10-26 00:53:46 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mSoftware Load (0.3ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/employees/_form.html.erb:6
+  Rendered employees/_form.html.erb (Duration: 22.7ms | Allocations: 5254)
+  Rendered employees/new.html.erb within layouts/application (Duration: 28.0ms | Allocations: 5343)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 7448)
+Completed 200 OK in 49ms (Views: 47.3ms | ActiveRecord: 0.3ms | Allocations: 7720)
+
+
+Started GET "/employees/new" for 192.168.56.1 at 2023-10-26 20:07:39 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/new.html.erb within layouts/application
+  [1m[36mSoftware Load (1.1ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/employees/_form.html.erb:6
+  Rendered employees/_form.html.erb (Duration: 374.4ms | Allocations: 5325)
+  Rendered employees/new.html.erb within layouts/application (Duration: 393.0ms | Allocations: 5414)
+  Rendered layout layouts/application.html.erb (Duration: 477.8ms | Allocations: 7519)
+Completed 200 OK in 581ms (Views: 508.1ms | ActiveRecord: 12.5ms | Allocations: 7792)
+
+
+Started POST "/employees" for 192.168.56.1 at 2023-10-26 22:29:00 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"Firstname"=>"", "Lastname"=>"", "software_ids"=>[""]}, "commit"=>"Create Employee"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/employees_controller.rb:27:in `block in create'
+  [1m[36mEmployee Create (9.2ms)[0m  [1m[32mINSERT INTO "employees" ("Firstname", "Lastname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["Firstname", ""], ["Lastname", ""], ["created_at", "2023-10-26 22:29:01.311413"], ["updated_at", "2023-10-26 22:29:01.311413"]]
+  ↳ app/controllers/employees_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (22.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/employees_controller.rb:27:in `block in create'
+Redirected to http://192.168.56.101:3000/employees/7
+Completed 302 Found in 342ms (ActiveRecord: 57.5ms | Allocations: 2621)
+
+
+Started GET "/employees/7" for 192.168.56.1 at 2023-10-26 22:29:01 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mEmployee Load (2.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:63:in `set_employee'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/show.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Employee"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/employees/_employee.html.erb:2
+  [1m[36mDevice Load (3.3ms)[0m  [1m[34mSELECT "devices".* FROM "devices" WHERE "devices"."employee_id" = ?[0m  [["employee_id", "7"]]
+  ↳ app/views/employees/_employee.html.erb:15
+  [1m[36mSoftware Load (0.3ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares" INNER JOIN "employees_softwares" ON "softwares"."id" = "employees_softwares"."software_id" WHERE "employees_softwares"."employee_id" = ?[0m  [["employee_id", 7]]
+  ↳ app/views/employees/_employee.html.erb:25
+  Rendered employees/_employee.html.erb (Duration: 103.4ms | Allocations: 2512)
+  Rendered employees/show.html.erb within layouts/application (Duration: 131.2ms | Allocations: 3063)
+  Rendered layout layouts/application.html.erb (Duration: 201.0ms | Allocations: 5194)
+Completed 200 OK in 247ms (Views: 219.1ms | ActiveRecord: 6.5ms | Allocations: 5966)
+
+
+Started GET "/employees/7/edit" for 192.168.56.1 at 2023-10-26 22:29:03 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:63:in `set_employee'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Employee"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/employees/_form.html.erb:5
+  [1m[36mSoftware Load (0.2ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares" INNER JOIN "employees_softwares" ON "softwares"."id" = "employees_softwares"."software_id" WHERE "employees_softwares"."employee_id" = ?[0m  [["employee_id", 7]]
+  ↳ app/views/employees/_form.html.erb:6
+  [1m[36mSoftware Load (1.3ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/employees/_form.html.erb:6
+  Rendered employees/_form.html.erb (Duration: 98.6ms | Allocations: 7216)
+  Rendered employees/edit.html.erb within layouts/application (Duration: 124.7ms | Allocations: 7506)
+  Rendered layout layouts/application.html.erb (Duration: 155.3ms | Allocations: 9604)
+Completed 200 OK in 177ms (Views: 163.1ms | ActiveRecord: 2.2ms | Allocations: 10406)
+
+
+Started GET "/employees/7/edit" for 192.168.56.1 at 2023-10-27 00:14:33 +0000
+Cannot render console from 192.168.56.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by EmployeesController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mEmployee Load (1.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/employees_controller.rb:63:in `set_employee'
+  Rendering layout layouts/application.html.erb
+  Rendering employees/edit.html.erb within layouts/application
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 7], ["record_type", "Employee"], ["name", "profile_picture"], ["LIMIT", 1]]
+  ↳ app/views/employees/_form.html.erb:5
+  [1m[36mSoftware Load (0.2ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares" INNER JOIN "employees_softwares" ON "softwares"."id" = "employees_softwares"."software_id" WHERE "employees_softwares"."employee_id" = ?[0m  [["employee_id", 7]]
+  ↳ app/views/employees/_form.html.erb:6
+  [1m[36mSoftware Load (1.6ms)[0m  [1m[34mSELECT "softwares".* FROM "softwares"[0m
+  ↳ app/views/employees/_form.html.erb:6
+  Rendered employees/_form.html.erb (Duration: 450.0ms | Allocations: 7123)
+  Rendered employees/edit.html.erb within layouts/application (Duration: 468.6ms | Allocations: 7248)
+  Rendered layout layouts/application.html.erb (Duration: 539.4ms | Allocations: 9379)
+Completed 200 OK in 707ms (Views: 584.6ms | ActiveRecord: 8.8ms | Allocations: 10262)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEmployee Create (6.2ms)[0m  [1m[32mINSERT INTO "employees" ("Firstname", "Lastname", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["Firstname", nil], ["Lastname", nil], ["created_at", "2023-10-30 22:00:18.092431"], ["updated_at", "2023-10-30 22:00:18.092431"]]
+  [1m[36mTRANSACTION (19.6ms)[0m  [1m[36mcommit transaction[0m
