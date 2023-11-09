@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+# 1
 catigory_hashes = [
   {
     :name => "smart phone"
@@ -17,7 +17,8 @@ catigory_hashes = [
     :name => "desktop"
   }
 ]
-Catigories.create(catigory_hashes)
+#2
+Catigory.create(catigory_hashes)
 
 manufacturers_hashes = [
   {
@@ -29,10 +30,11 @@ manufacturers_hashes = [
     :website => "https://www.lenovo.com"
   },
   {
-    :name => "Dell"
+    :name => "Dell",
     :website => "https://www.dell.com"
   }
 ]
+#3
 Manufacturer.create(manufacturers_hashes)
 
 5.times do |index|
@@ -41,28 +43,42 @@ Manufacturer.create(manufacturers_hashes)
     :Lastname => "#{index + 1}"
   )
 end
-
-3.times do |catigory_id|
-  3.times do |manufacturer_id|
-    employee_id = 1
-    device_name = "#{Category.find(catigory_id + 1).name} #{manufacturer_id + 1}"
-    Device.create(
-      name: device_name,
-      catigory_id: catigory_id +1,
-      manufacturer_id: manufacturer_id + 1,
-      employee_id: employee_id
-    )
-    employee_id +=1
-  end
+#4
+Employee.all.each do |employee|
+  catigory_id = 1
+  manufacturer_id = 1
+  device_name = "#{Catigory.find(catigory_id).name} #{employee.id}"
+  
+  Device.create(
+    Name: device_name,
+    catigory_id: catigory_id,
+    manufacturer_id: manufacturer_id,
+    employee_id: employee.id
+  )
 end
-
+#5
+Employee.all.each do |employee|
+  catigory_id = 2
+  manufacturer_id = 2
+  device_name = "#{Catigory.find(catigory_id).name} #{employee.id}"
+  
+  Device.create(
+    Name: device_name,
+    catigory_id: catigory_id,
+    manufacturer_id: manufacturer_id,
+    employee_id: employee.id
+  )
+end
+#6
 5.times do |index|
-  Software.create(name: "Software #{index + 1}", licence_count: rand(1..5))
+  Software.create(name: "Software #{index + 1}", License_count: rand(1..5))
 end
 
-15.times do
-  employee_id = rand(1..5)
-  software_id = rand(1..5)
-  employee = Employee.find(employee_id)
-  sofware = Software.find(software_id)
+#7-8
+3.times do
+  Employee.all.each do |employee|
+    software_id = rand(1..5)
+    software = Software.find(software_id)
+      employee.softwares << software
+  end
 end
