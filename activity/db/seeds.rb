@@ -45,29 +45,23 @@ Manufacturer.create(manufacturers_hashes)
 end
 #4
 Employee.all.each do |employee|
-  catigory_id = 1
-  manufacturer_id = 1
-  device_name = "#{Catigory.find(catigory_id).name} #{employee.id}"
-  
-  Device.create(
-    Name: device_name,
-    catigory_id: catigory_id,
-    manufacturer_id: manufacturer_id,
-    employee_id: employee.id
-  )
-end
-#5
-Employee.all.each do |employee|
-  catigory_id = 2
-  manufacturer_id = 2
-  device_name = "#{Catigory.find(catigory_id).name} #{employee.id}"
-  
-  Device.create(
-    Name: device_name,
-    catigory_id: catigory_id,
-    manufacturer_id: manufacturer_id,
-    employee_id: employee.id
-  )
+  (1..3).each do |category_id|
+    (1..3).each do |manufacturer_id|
+      device_name = "Device #{rand(1..100)}"
+      category = Catigory.find(category_id)
+      manufacturer = Manufacturer.find(manufacturer_id)
+     
+      if employee.devices.count < 3
+        device = Device.create(
+          Name: device_name,
+          catigory: category,
+          manufacturer: manufacturer,
+          employee: nil
+        )
+        employee.devices << device
+      end
+    end
+  end
 end
 #6
 5.times do |index|
