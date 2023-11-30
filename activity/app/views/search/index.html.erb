@@ -9,14 +9,14 @@
 
     <div>
         <%= form.label :catigory_id, "Filter by Category:", :class => "form-label" %>
-        <%= form.select :catigory_id, Catigory.all.map { |s| [s.full_name, s.id] },
+        <%= form.select :catigory_id, Catigory.all.map { |s| [s.name, s.id] },
         { :selected => @catigory_id, :include_blank => true },
         { :class => "form-select" } %>
     </div>
 
     <div>
         <%= form.label :manufacturer_id, "Filter by manufacturer:", :class => "form-label" %>
-        <%= form.select :manufacturer_id, Manufacturer.all.map { |s| [s.full_name, s.id] },
+        <%= form.select :manufacturer_id, Manufacturer.all.map { |s| [s.name, s.id] },
         { :selected => @manufacturer_id, :include_blank => true },
         { :class => "form-select" } %>
   <%end %>

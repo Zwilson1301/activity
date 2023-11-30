@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @query = perams[:query]
+    @query = params[:query]
     @catigory_id = params[:catigory_id]
     @manufacturer_id = params[:manufacturer_id]
     

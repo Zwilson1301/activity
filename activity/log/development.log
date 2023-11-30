@@ -32563,3 +32563,5 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 273ms (Views: 262.7ms | ActiveRecord: 9.3ms | Allocations: 17154)
 
 
+  [1m[36mManufacturer Load (0.7ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers" ORDER BY "manufacturers"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mCatigory Load (0.2ms)[0m  [1m[34mSELECT "catigories".* FROM "catigories" ORDER BY "catigories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
