@@ -45,10 +45,10 @@ Manufacturer.create(manufacturers_hashes)
 end
 #4
 3.times do |index|
-  Category.all.each do |catigory|
+  Catigory.all.each do |catigory|
     Manufacturer.all.each do |manufacturer|
       Device.create(
-        Name: device_name,
+        Name: "Device #{rand(100)}",
         catigory: catigory,
         manufacturer: manufacturer
       )
@@ -66,5 +66,13 @@ end
     software_id = rand(1..5)
     software = Software.find(software_id)
     employee.softwares << software
+  end
+end
+
+3.times do
+  Employee.all.each do |employee|
+    device = Device.where(:employee_id => nil).sample
+    device.employee = employee
+    device.save
   end
 end
